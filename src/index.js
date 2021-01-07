@@ -52,9 +52,21 @@ class App extends Component {
       .catch(err => console.err("handleSubmit Error:", err))
   }
 
+  deleteTodo = (id) => {
+    axios 
+      .delete(`https://gms-flask-todo-api.herokuapp.com/todo/delete/${id}`)
+      .then(() => {
+        this.setState({
+          todos: this.state.todos.filter(todo => {
+            return todo.id !==id;
+          })
+        })
+      })
+  }
+
   renderTodos = () => {
     return this.state.todos.map(todo => {
-      return <TodoItem key={todo.id} {...todo}/>
+      return <TodoItem key={todo.id} {...todo} deleteTodo={this.deleteTodo}/>
       
     })
   }

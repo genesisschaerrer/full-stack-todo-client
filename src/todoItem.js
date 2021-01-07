@@ -22,8 +22,8 @@ export default function TodoItem(props){
             onClick={toggleDone}
             defaultChecked={done}
             />
-            <p className="something">{props.title}</p>
-            <button>Delete</button>
+            <p className={done ? "done": ""}>{props.title}</p>
+            <button onClick={()=> props.deleteTodo(props.id)}>Delete</button>
         </div>
     )
 }
