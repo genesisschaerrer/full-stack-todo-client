@@ -12,7 +12,7 @@ class App extends Component {
 
     this.state={
       todo: "",
-      todos: [{title: "mock data", done: false}]
+      todos: []
     }
   }
 
@@ -35,13 +35,25 @@ class App extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    console.log("submit")
+    //post to api
+    axios 
+      .post("https://gms-flask-todo-api.herokuapp.com/todo", {
+      title: this.state.todo,
+      done: false
+      }) 
+      .then(res => {
+        this.setState({
+          todos: [...this.state.todos, res.data],
+          todo: ""
+        })
+      })
+      .catch(err => console.err("handleSubmit Error:", err))
   }
 
   renderTodos = () => {
     return this.state.todos.map(todo => {
       return (
-        <div>
+        <div key={todo.id} className="todo-item">
           <h1>{todo.title}</h1>
         </div>
       )
@@ -50,7 +62,7 @@ class App extends Component {
 
   render(){
     return(
-      <div>
+      <div className="app">
         <h1>Todo List</h1>
         <form className="add-todo" onSubmit={this.handleSubmit}>
           <input 
