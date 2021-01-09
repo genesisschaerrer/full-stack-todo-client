@@ -7,7 +7,7 @@ export default function TodoItem(props){
     const toggleDone = () => {
         //update Database
         axios 
-            .patch(`https://gms-flask-todo-api.herokuapp.com/todo/${props.id}` , {
+            .patch(`https://gms-express-todo-api.herokuapp.com/${props.id}` , {
                 //!done because whatever it is we want to flip it each time.
                 done: !done
             })
