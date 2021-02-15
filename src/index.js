@@ -20,7 +20,7 @@ class App extends Component {
 
   componentDidMount(){
     axios
-      .get("https://gms-express-todo-api.herokuapp.com/todos")
+      .get("https://gms-flask-todo-api.herokuapp.com/todos")
       .then(res => {
         this.setState({
           todos: res.data
@@ -39,7 +39,7 @@ class App extends Component {
     e.preventDefault()
     //post to api
     axios 
-      .post("https://gms-express-todo-api.herokuapp.com/todo", {
+      .post("https://gms-flask-todo-api.herokuapp.com/todo", {
       title: this.state.todo,
       done: false
       }) 
@@ -54,7 +54,7 @@ class App extends Component {
 
   deleteTodo = (id) => {
     axios 
-      .delete(`https://gms-express-todo-api.herokuapp.com/todo/delete/${id}`)
+      .delete(`https://gms-flask-todo-api.herokuapp.com/todo/delete/${id}`)
       .then(() => {
         this.setState({
           todos: this.state.todos.filter(todo => {
