@@ -11,8 +11,9 @@ export default function TodoItem(props){
                 //!done because whatever it is we want to flip it each time.
                 done: !done
             })
-            .then(() => setDone(!done))
-            .catch(err => console.err("toggleDone: ", err))
+            // .then(() => setDone(!done))
+            .then(res => console.log(res))
+            .catch(err => console.log("toggleDone: ", err))
         //update state
     }
     return(
