@@ -1,7 +1,7 @@
 #root {
     display: flex;
     justify-content: center;
-    color: #00cb78;
+    color: #ebebeb;
     font-family: sans-serif;
 }
 
@@ -9,10 +9,14 @@
     margin-top: 2rem;
     display: grid;
     justify-items: center;
-    background-color: #454544;
+    background-color: #004e98;
     border-radius: 10px;
     width: 400px;
     box-shadow: 5px 5px 5px #999999;
+}
+
+body {
+    background-color: #caf0f8;
 }
 
 .add-todo {
@@ -21,6 +25,10 @@
     align-items: center;
     width: 60%;
     padding-bottom: 15px;
+}
+
+.submit {
+    color: #ff6700;
 }
 
 .add-todo input, button {

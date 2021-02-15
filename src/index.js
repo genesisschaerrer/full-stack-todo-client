@@ -82,7 +82,7 @@ class App extends Component {
             onChange={this.handleChange}
             value={this.state.todo}
           />
-          <button type="submit">Add</button>
+          <button className="submit" type="submit">+</button>
         </form>
         {this.renderTodos()}
       </div>
