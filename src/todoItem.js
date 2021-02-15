@@ -18,12 +18,13 @@ export default function TodoItem(props){
     return(
         <div className="todo-item">
             <input
+            className="checkbox"
             type="checkbox"
             onClick={toggleDone}
             defaultChecked={done}
             />
             <p className={done ? "done": ""}>{props.title}</p>
-            <button onClick={()=> props.deleteTodo(props.id)}>Delete</button>
+            <button className="remove" onClick={()=> props.deleteTodo(props.id)}>x</button>
         </div>
     )
 }

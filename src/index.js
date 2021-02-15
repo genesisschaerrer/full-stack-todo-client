@@ -77,6 +77,7 @@ class App extends Component {
         <h1>Todo List</h1>
         <form className="add-todo" onSubmit={this.handleSubmit}>
           <input 
+            className="input"
             type="text"
             placeholder="add todo item"
             onChange={this.handleChange}

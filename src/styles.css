@@ -6,7 +6,7 @@
 }
 
 .app {
-    margin-top: 2rem;
+    margin-top: 6rem;
     display: grid;
     justify-items: center;
     background-color: #004e98;
@@ -28,7 +28,20 @@ body {
 }
 
 .submit {
-    color: #ff6700;
+    background-color: #ff6700;
+    font-size: 1.4em;
+    padding: .2em .5em;
+    color: white;
+}
+
+.input{
+    padding: .3em .5em;
+    font-size: 1.3rem;
+}
+
+p {
+    font-size: 1.5rem;
+    margin: .5em .3em; 
 }
 
 .add-todo input, button {
@@ -43,6 +56,9 @@ body {
 
 button {
     margin-left: 5px;
+    background-color: white;
+    color: #004e98;
+    padding: .2em .5em;
 }
 
 .todo-item {
@@ -54,4 +70,18 @@ button {
 .done {
     color: black;
     text-decoration: line-through;
+}
+
+.checkbox:hover {
+    cursor: pointer;
+}
+
+.remove{
+    font-size: 1rem;
+    padding: .1em .4em;
+}
+.remove:hover{
+    background-color: red;
+    color: white;
+    cursor: pointer;
 }
