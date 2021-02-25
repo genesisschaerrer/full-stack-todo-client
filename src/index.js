@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import axios from "axios"
 
 import TodoItem from "./todoItem"
+import Logo from "../src/images/logo.png"
 import './styles.css';
 
 
@@ -74,18 +75,23 @@ class App extends Component {
   render(){
     return(
       <div className="app">
-        <h1>Todo List</h1>
-        <form className="add-todo" onSubmit={this.handleSubmit}>
-          <input 
-            className="input"
-            type="text"
-            placeholder="add todo item"
-            onChange={this.handleChange}
-            value={this.state.todo}
-          />
-          <button className="submit" type="submit">+</button>
-        </form>
-        {this.renderTodos()}
+        <div className="nav-bar">
+          <img className="logo" src={Logo} alt="logo"/>
+        </div>
+        <div className="todo-container">
+          <h1>Todo List</h1>
+          <form className="add-todo" onSubmit={this.handleSubmit}>
+            <input 
+              className="input"
+              type="text"
+              placeholder="add todo item"
+              onChange={this.handleChange}
+              value={this.state.todo}
+            />
+            <button className="submit" type="submit">+</button>
+          </form>
+          {this.renderTodos()}
+        </div>
       </div>
     )
   }
